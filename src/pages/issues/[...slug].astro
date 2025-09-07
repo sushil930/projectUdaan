@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const issues = await getCollection('issues');
+  return issues.map(issue => ({
+    params: { slug: issue.slug },
+    props: { issue },
+  }));
+}
+
+const { issue } = Astro.props;
+---
+
+<Layout title={issue.data.title}>
+  <section class="py-16">
+    <div class="container mx-auto">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="text-left">
+          <h1 class="text-4xl font-bold text-navy mb-4">{issue.data.title}</h1>
+          <p class="text-gray-600 mb-6">{new Date(issue.data.pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+          <div class="prose max-w-none">
+            <p>{issue.body}</p>
+          </div>
+        </div>
+        <div>
+          <iframe src={`${issue.data.pdf}#toolbar=0`} width="100%" height="800px" class="rounded-lg shadow-lg"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

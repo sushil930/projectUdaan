@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TeamMember from '../components/TeamMember.astro';
+
+const team = [
+  {
+    name: 'Dr. Aarti Prasad',
+    role: 'Editor-in-Chief',
+    imageUrl: '/images/team/placeholder.png',
+  },
+  {
+    name: 'Prof. Ramesh Gupta',
+    role: 'Managing Editor',
+    imageUrl: '/images/team/placeholder.png',
+  },
+  {
+    name: 'Dr. Priya Sharma',
+    role: 'Poetry Editor',
+    imageUrl: '/images/team/placeholder.png',
+  },
+  {
+    name: 'Mr. Alok Verma',
+    role: 'Fiction Editor',
+    imageUrl: '/images/team/placeholder.png',
+  },
+  {
+    name: 'Ms. Sunita Krishnan',
+    role: 'Non-fiction Editor',
+    imageUrl: '/images/team/placeholder.png',
+  },
+  {
+    name: 'Mr. Rohan Desai',
+    role: 'Art & Design Editor',
+    imageUrl: '/images/team/placeholder.png',
+  },
+];
+---
+
+<Layout title="Our Team | UDAAN">
+  <section class="py-16 bg-light-cream">
+    <div class="container mx-auto">
+      <h1 class="text-4xl font-bold text-navy mb-12 text-center">Our Team</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        {team.map(member => <TeamMember {...member} />)}
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,34 @@
+---
+const patrons = [
+  {
+    name: "Alex Chen",
+    image: "/images/patron1.png",
+    quote: "UDAAN has been a transformative platform for my creative expression. The community is incredibly supportive.",
+  },
+  {
+    name: "Priya Sharma",
+    image: "/images/patron2.png",
+    quote: "A fantastic initiative that gives a voice to so many. I'm proud to be a patron.",
+  },
+  {
+    name: "Ben Carter",
+    image: "/images/patron3.png",
+    quote: "The quality and diversity of work in each issue is astounding. A must-read for art lovers.",
+  },
+];
+---
+
+<section class="py-16 bg-light-cream">
+  <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold text-navy mb-12">Words from Our Patrons</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      {patrons.map(patron => (
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <img src={patron.image} alt={`Portrait of ${patron.name}`} class="w-24 h-24 rounded-full mx-auto mb-4" />
+          <p class="text-lg font-semibold text-navy">{patron.name}</p>
+          <p class="text-gray-600 mt-2">"{patron.quote}"</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

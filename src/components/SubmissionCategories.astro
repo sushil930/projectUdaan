@@ -1,0 +1,22 @@
+---
+const categories = [
+  { name: "Poetry", description: "Evocative verses that explore the human condition." },
+  { name: "Short Stories", description: "Compelling narratives that captivate and inspire." },
+  { name: "Visual Arts", description: "Paintings, drawings, and digital art that tell a story." },
+  { name: "Photography", description: "Moments captured in time, from the mundane to the extraordinary." },
+];
+---
+
+<section class="py-16 bg-light-cream">
+  <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold text-navy mb-12">What We Publish</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {categories.map(category => (
+        <div class="bg-white p-6 rounded-lg shadow-md text-left">
+          <h3 class="text-xl font-bold text-navy mb-2">{category.name}</h3>
+          <p class="text-gray-600">{category.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

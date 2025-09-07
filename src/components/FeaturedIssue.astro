@@ -1,0 +1,20 @@
+---
+import Button from './Button.astro';
+---
+
+<section class="py-16">
+  <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold text-navy mb-8">Featured Issue</h2>
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div class="text-left">
+        <h3 class="text-2xl font-bold text-navy mb-4">Vol. 1: The Genesis Issue</h3>
+        <p class="text-gray-600 mb-6">Our inaugural issue explores themes of origin, creativity, and new beginnings. Featuring a diverse collection of poetry, short stories, and visual art from emerging artists.
+        </p>
+  <Button href="/pdfs/issue1.pdf">Read Now</Button>
+      </div>
+      <div>
+        <img src="/images/issue1-cover.png" alt="Cover of The Genesis Issue" class="rounded-lg shadow-lg" />
+      </div>
+    </div>
+  </div>
+</section>
